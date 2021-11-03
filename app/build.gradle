@@ -1,0 +1,59 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "kotlin-kapt"
+    id "kotlin-parcelize"
+}
+
+android {
+    compileSdk 30
+
+    defaultConfig {
+        applicationId "com.omgodse.notally"
+        minSdk 21
+        targetSdk 30
+        versionCode 37
+        versionName "4.2"
+        resConfigs "en", "ca", "cs", "de", "es", "fr", "hu", "in", "it", "ja", "nb", "nl", "pl", "pt-rBR", "ru", "sk", "sv", "tl", "tr", "uk", "zh-rCN"
+        vectorDrawables.generatedDensities = []
+    }
+
+    kapt {
+        arguments {
+            arg("room.schemaLocation", "$projectDir/schemas")
+        }
+    }
+
+    buildTypes {
+        release {
+            crunchPngs false
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+        }
+    }
+
+    kotlinOptions { jvmTarget = "1.8" }
+
+    buildFeatures { viewBinding true }
+
+    packagingOptions { exclude "DebugProbesKt.bin" }
+}
+
+dependencies {
+    final def navVersion = "2.3.5"
+    final def roomVersion = "2.3.0"
+
+    implementation "androidx.preference:preference-ktx:1.1.1"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.3.1"
+
+    kapt "androidx.room:room-compiler:$roomVersion"
+    implementation "androidx.room:room-ktx:$roomVersion"
+    implementation "androidx.room:room-runtime:$roomVersion"
+
+    implementation "androidx.navigation:navigation-ui-ktx:$navVersion"
+    implementation "androidx.navigation:navigation-fragment-ktx:$navVersion"
+
+    implementation "org.ocpsoft.prettytime:prettytime:4.0.6.Final"
+    implementation "com.google.android.material:material:1.4.0"
+}

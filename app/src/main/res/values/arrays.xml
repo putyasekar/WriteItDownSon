@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="linkOptions">
+        <item>@string/edit</item>
+        <item>@string/open_link</item>
+    </string-array>
+
+    <string-array name="libraries">
+        <item>@string/room</item>
+        <item>@string/pretty_time</item>
+        <item>@string/material_components_android</item>
+    </string-array>
+
+    <string-array name="themeEntries">
+        <item>@string/dark</item>
+        <item>@string/light</item>
+        <item>@string/follow_system</item>
+    </string-array>
+
+    <string-array name="themeValues">
+        <item>@string/darkKey</item>
+        <item>@string/lightKey</item>
+        <item>@string/followSystemKey</item>
+    </string-array>
+
+    <string-array name="viewEntries">
+        <item>@string/list</item>
+        <item>@string/grid</item>
+    </string-array>
+
+    <string-array name="viewValues">
+        <item>@string/listKey</item>
+        <item>@string/gridKey</item>
+    </string-array>
+
+    <string-array name="noteTypeEntries">
+        <item>@string/flat</item>
+        <item>@string/elevated</item>
+    </string-array>
+
+    <string-array name="noteTypeValues">
+        <item>@string/flatKey</item>
+        <item>@string/elevatedKey</item>
+    </string-array>
+</resources>
